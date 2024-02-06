@@ -9,13 +9,14 @@ export const DropdownProvider = ({ children }) => {
   const [selectedItem, setSelectedItem] = useState(null);
 
   const toggleDropdown = () => setIsOpen(!isOpen);
+
   const selectItem = (item) => {
     setSelectedItem(item);
   };
 
   return (
     <DropdownContext.Provider
-      value={{ isOpen, selectedItem, toggleDropdown, selectItem }}
+      value={{ isOpen, setIsOpen, selectedItem, toggleDropdown, selectItem }}
     >
       {children}
     </DropdownContext.Provider>
